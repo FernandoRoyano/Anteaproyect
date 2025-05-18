@@ -1,0 +1,121 @@
+.contacto {
+  padding: 80px 20px;
+  background-color: #f4f8fc;
+  text-align: center;
+}
+
+.titulo {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: #174B8C;
+}
+
+.formulario {
+  max-width: 500px;
+  margin: 0 auto 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.campo {
+  padding: 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.boton {
+  background-color: #174B8C;
+  color: white;
+  border: none;
+  padding: 14px;
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.boton:hover {
+  background-color: #0c326d;
+}
+
+.opcional {
+  margin: 20px 0 10px;
+  color: #555;
+}
+
+.whatsapp {
+  display: inline-block;
+  background-color: #25D366;
+  color: white;
+  font-weight: bold;
+  padding: 12px 24px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.whatsapp:hover {
+  background-color: #1ebe5d;
+}
+.checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 15px 0 25px;
+}
+
+.checklist label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1rem;
+  color: #333;
+  cursor: pointer;
+}
+
+.checklist input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #174B8C;
+  cursor: pointer;
+}
+
+.label {
+  font-size: 1rem;
+  margin: 20px 0 10px;
+  font-weight: bold;
+  color: #174B8C;
+}
+
+.checkCards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  background: #f5faff;
+  border: 2px solid #d0e6ff;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 1rem;
+  flex: 1 1 250px;
+}
+
+.card input[type="checkbox"] {
+  accent-color: #174B8C;
+  transform: scale(1.2);
+}
+
+.card:hover {
+  background-color: #e6f0ff;
+  border-color: #174B8C;
+}

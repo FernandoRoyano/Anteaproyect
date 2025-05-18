@@ -1,0 +1,31 @@
+.footer {
+  background-color: #f0f4fa;
+  padding: 40px 20px;
+  text-align: center;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.columns {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.col a {
+  color: #174B8C;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.col a:hover {
+  text-decoration: underline;
+}

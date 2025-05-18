@@ -1,40 +1,56 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# ANTEA – Cuidado Personalizado para Mayores
 
-## Getting Started
+**ANTEA** es un servicio de entrenamiento funcional y acompañamiento emocional para personas mayores con movilidad reducida, diseñado para proporcionar tranquilidad a los familiares y dignidad a los mayores. Esta landing page está desarrollada en React para convertir visitas en clientes mediante una narrativa emocional, profesional y diferenciadora.
 
-First, run the development server:
+---
+
+## 🚀 Objetivo del Proyecto
+
+Desarrollar una landing page de alto impacto para validar la oferta de ANTEA en el mercado. El enfoque está en transmitir:
+- Confiabilidad
+- Profesionalismo
+- Humanidad
+- Diferenciación frente a cuidadores tradicionales
+
+---
+
+## 🧱 Estructura del Proyecto
+
+1. **Hero Section**: Frase impactante, subtítulo emocional y llamada a la acción.
+2. **Problema y Consecuencia**: Qué viven los hijos, qué les preocupa.
+3. **Solución**: Qué es ANTEA y cómo lo resolvemos.
+4. **Planes**: Diferentes planes con precio y beneficios.
+5. **Testimonios**: Historias reales de transformación.
+6. **Comparativa**: ANTEA vs cuidadores tradicionales.
+7. **Call to Action final**: Urgencia y limitación de plazas.
+8. **Contacto**: WhatsApp directo y formulario de contacto.
+
+---
+
+## 🧩 Stack Tecnológico
+
+- React JS
+- HTML5 / CSS3
+- JavaScript ES6
+- Responsive Design (a integrar en futuras fases)
+- WhatsApp API (enlace directo)
+- Back (futuro): Firebase / Node.js para lead management
+
+---
+
+## 📁 Estructura del Código
+
+- `App.jsx` – Estructura principal de la landing
+- `App.css` – Estilos limpios, modernos y confiables
+- `public/index.html` – Render HTML (para modo simple o fallback)
+- `assets/` – Aquí van imágenes, logos, vídeos testimoniales
+
+---
+
+## 📦 Instalación rápida
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+git clone https://github.com/tuusuario/antea-landing.git
+cd antea-landing
+npm install
+npm start

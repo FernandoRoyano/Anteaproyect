@@ -1,0 +1,39 @@
+.comparativa {
+  padding: 80px 20px;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.titulo {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: #174B8C;
+}
+
+.tabla {
+  display: grid;
+  gap: 10px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.fila {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  background: #f9f9f9;
+  padding: 16px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  align-items: center;
+}
+
+.encabezado {
+  background-color: #174B8C;
+  color: white;
+  font-weight: bold;
+}
+
+.fila:nth-child(even):not(.encabezado) {
+  background-color: #f0f4fa;
+}
