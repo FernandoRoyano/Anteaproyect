@@ -96,25 +96,37 @@ export default function Planes() {
                 <li key={i}>{extra}</li>
               ))}
             </ul>
-            <button className={styles.boton}>Empezar ahora</button>
+            <a href="#contacto" className={styles.boton}>
+              Empezar ahora
+            </a>
           </div>
         ))}
       </div>
 
+      {/* BLOQUE ONLINE */}
       <div className={styles.onlineBlock}>
-        <h4>
-          ¿Vives lejos de tus padres? <span className={styles.onlineTag}>También online</span>
-        </h4>
+        <div className={styles.onlineHeader}>
+          <span className={styles.onlineTag}>¿Vives lejos de tus padres?</span>
+          <span className={styles.onlineDisponible}>También online</span>
+        </div>
         <p className={styles.onlineDesc}>
-          {planOnline.tagline}
+          Resultados sin salir de casa.<br />
+          <span className={styles.onlineNota}>Perfecto para familias lejos.</span>
         </p>
         <ul className={styles.onlineExtras}>
-          {planOnline.extras.map((extra, i) => (
-            <li key={i}>{extra}</li>
-          ))}
+          <li>✅ Sesiones 100% online</li>
+          <li>✅ Informe semanal digital</li>
+          <li>✅ Soporte WhatsApp</li>
         </ul>
-        <div className={styles.onlinePrecio}><b>{planOnline.precio}</b> al mes</div>
-        <button className={styles.botonSecundario}>Solicitar info del plan online</button>
+        <div className={styles.onlinePrecio}><b>197€</b> al mes</div>
+        <a
+         href="https://wa.me/34633261963"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={styles.botonSecundario}
+        >
+          Solicitar info del plan online
+        </a>
       </div>
 
       <p className={styles.comparativa}>

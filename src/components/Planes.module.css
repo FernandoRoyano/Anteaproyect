@@ -93,3 +93,98 @@
   position: relative;
   z-index: 1;
 }
+.onlineBlock {
+  background: #f4f8f6;
+  border: 2px dashed #25d366;
+  border-radius: 14px;
+  box-shadow: 0 2px 18px rgba(0,0,0,0.06);
+  margin: 48px auto 18px auto;      /* MÁS margen arriba, aire con las tarjetas */
+  max-width: 400px;
+  padding: 30px 22px 24px 22px;     /* Más padding */
+  text-align: center;
+  transition: box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.onlineBlock h4 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-size: 19px;
+  font-weight: 700;
+  color: #1a2e25;
+  letter-spacing: 0.2px;
+}
+.onlineTag {
+  color: #25d366;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: block;
+  margin-bottom: 3px;
+}
+.onlineDisponible {
+  color: #3a5551;
+  font-size: 15px;
+  margin-left: 8px;
+  font-weight: 500;
+}
+.onlineDesc {
+  color: #23272f;
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 4px;
+  line-height: 1.4;
+}
+.onlineNota {
+  color: #25d366;
+  font-weight: bold;
+  font-size: 15px;
+}
+.onlineExtras {
+  margin: 16px 0 16px 0;
+  padding-left: 0;
+  list-style: none;
+  text-align: left;
+  display: inline-block;
+}
+.onlineExtras li {
+  margin: 7px 0;
+  font-size: 15px;
+  padding-left: 1.4em;
+  text-indent: -1em;
+}
+.onlinePrecio {
+  color: #222;
+  font-size: 19px;
+  font-weight: bold;
+  margin: 14px 0 16px 0;
+}
+.botonSecundario {
+  background: #fff;
+  border: 2px solid #25d366;
+  color: #25d366;
+  border-radius: 7px;
+  padding: 12px 28px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+  box-shadow: 0 2px 8px rgba(37,211,102,0.06);
+  transition: background 0.18s, color 0.18s;
+  text-decoration: none;
+  display: inline-block;
+}
+.botonSecundario:hover {
+  background: #25d366;
+  color: #fff;
+}
+
+@media (max-width: 600px) {
+  .onlineBlock {
+    max-width: 98vw;
+    padding: 18px 7vw 14px 7vw;
+    margin-top: 28px;
+  }
+}
