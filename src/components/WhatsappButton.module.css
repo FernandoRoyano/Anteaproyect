@@ -1,0 +1,15 @@
+.whatsapp {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: transform 0.2s;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+.whatsapp:hover {
+  transform: scale(1.1);
+}

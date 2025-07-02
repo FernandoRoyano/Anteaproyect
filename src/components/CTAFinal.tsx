@@ -18,6 +18,17 @@ export default function CTAFinal() {
             <strong>La diferencia entre moverse ahora o esperar puede ser irreparable.<br />
             Hazlo hoy, y que tu familia te lo agradezca mañana.</strong>
           </p>
+          <p style={{ textAlign: 'center', marginTop: 12 }}>
+            ¿Prefieres WhatsApp?{" "}
+            <a
+              href="https://wa.me/34666666666?text=Hola%20quiero%20más%20info%20sobre%20ANTEA"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.linkWhatsapp}
+            >
+              Haz clic aquí y háblanos directo
+            </a>
+          </p>
         </div>
       </div>
     </section>

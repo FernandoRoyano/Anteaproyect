@@ -7,6 +7,8 @@ import Contacto from '../components/Contacto';
 import CTAFinal from '../components/CTAFinal';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import WhatsappButton from '@/components/WhatsappButton';
+import CookieBanner from '@/components/CookieBanner'; // <--- AÑADE ESTA LÍNEA
 
 export default function Home() {
   return (
@@ -16,15 +18,16 @@ export default function Home() {
         <meta name="description" content="Entrenamiento funcional y compañía emocional para mayores." />
       </Head>
       <main>
-<Header/>        
-<Hero/>
-<Planes/>
-<Testimonios/>
-<Comparativa/>
-<Contacto/>
-<CTAFinal/>
-<Footer/>
-
+        <Header />        
+        <Hero />
+        <Planes />
+        <Testimonios />
+        <Comparativa />
+        <Contacto />
+        <CTAFinal />
+        <WhatsappButton />
+        <Footer />
+        <CookieBanner /> {/* <--- AÑADE EL BANNER AQUÍ */}
       </main>
     </>
   );

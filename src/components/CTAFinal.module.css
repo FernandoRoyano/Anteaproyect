@@ -53,3 +53,13 @@
 .boton:hover {
   background-color: #e0ac00;
 }
+.linkWhatsapp {
+  color: #25D366 !important;
+  font-weight: bold;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+.linkWhatsapp:hover {
+  color: #1fa851 !important;
+  text-decoration: none;
+}
