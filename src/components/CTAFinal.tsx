@@ -7,12 +7,17 @@ export default function CTAFinal() {
         <div className={styles.content}>
           <h2>Solo 5 familias nuevas al mes</h2>
           <p>
-            Agendamos pocas familias para mantener la calidad.
-            Solicita tu sesión gratuita y empieza a cuidar como tu madre merece.
+            No somos una fábrica de números. <br />
+            Trabajamos con pocas familias porque preferimos calidad antes que cantidad. <br />
+            <strong>Si de verdad te importa, actúa ya. Tu familia merece lo mejor.</strong>
           </p>
           <a href="#contacto" className={styles.boton}>
             Solicitar sesión gratuita
           </a>
+          <p className={styles.aviso}>
+            <strong>La diferencia entre moverse ahora o esperar puede ser irreparable.<br />
+            Hazlo hoy, y que tu familia te lo agradezca mañana.</strong>
+          </p>
         </div>
       </div>
     </section>

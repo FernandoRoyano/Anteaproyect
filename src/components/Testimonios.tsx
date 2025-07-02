@@ -25,7 +25,10 @@ const testimonios = [
 export default function Testimonios() {
   return (
     <section id="testimonios" className={styles.testimonios}>
-      <h2 className={styles.titulo}>Historias que inspiran confianza</h2>
+      <h2 className={styles.titulo}>¿Dudas? Lee esto antes de decidir</h2>
+      <p className={styles.microcopy}>
+        Familias reales, resultados que se ven y se sienten. Ellos ya dieron el paso. ¿Y tú?
+      </p>
       <div className={styles.grid}>
         {testimonios.map((t, i) => (
           <blockquote key={i} className={styles.card}>
@@ -41,6 +44,9 @@ export default function Testimonios() {
           </blockquote>
         ))}
       </div>
+      <p className={styles.llamada}>
+        No eres el primero, pero sí puedes ser el siguiente. <strong>Solicita tu sesión gratuita y que tu historia sea la próxima.</strong>
+      </p>
     </section>
   );
 }
