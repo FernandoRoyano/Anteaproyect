@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default function Privacidad() {
   return (
     <div style={{ maxWidth: 800, margin: "0 auto", padding: 32 }}>
@@ -7,20 +9,20 @@ export default function Privacidad() {
       </p>
 
       <h2>1. Responsable del tratamiento</h2>
-      <p>
+      <address>
         <strong>Responsable:</strong> ANTEA, S.L.<br />
         <strong>CIF:</strong> B12345678<br />
         <strong>Dirección:</strong> Calle Mayor, 123, 28000 Madrid, España<br />
         <strong>Teléfono:</strong> 912 345 678<br />
-        <strong>Email:</strong> privacidad@antea.com
-      </p>
+        <strong>Email:</strong> <a href="mailto:privacidad@antea.com">privacidad@antea.com</a>
+      </address>
 
       <h2>2. ¿Qué datos recogemos?</h2>
       <ul>
         <li><strong>Datos identificativos:</strong> nombre, apellidos.</li>
         <li><strong>Datos de contacto:</strong> email, teléfono, dirección postal (si procede).</li>
         <li><strong>Datos facilitados por el usuario:</strong> información enviada en formularios (por ejemplo, mensajes o preferencias).</li>
-        <li><strong>Datos de navegación:</strong> dirección IP, identificadores de dispositivos, cookies y similares, según se describe en la política de cookies.</li>
+        <li><strong>Datos de navegación:</strong> dirección IP, identificadores de dispositivos, cookies y similares, según se describe en la <Link href="/cookies">política de cookies</Link>.</li>
       </ul>
 
       <h2>3. ¿Con qué finalidad tratamos tus datos?</h2>
@@ -66,8 +68,8 @@ export default function Privacidad() {
         <li><strong>Retirar tu consentimiento:</strong> En cualquier momento, sin afectar a tratamientos anteriores.</li>
       </ul>
       <p>
-        Puedes ejercer tus derechos enviando un email a <b>privacidad@antea.com</b>, adjuntando copia de tu DNI o documento identificativo, o por correo postal a nuestra dirección.<br />
-        Si consideras que tus derechos no han sido respetados, puedes reclamar ante la <a href="https://www.aepd.es/" target="_blank" rel="noopener">Agencia Española de Protección de Datos</a>.
+        Puedes ejercer tus derechos enviando un email a <a href="mailto:privacidad@antea.com">privacidad@antea.com</a>, adjuntando copia de tu DNI o documento identificativo, o por correo postal a nuestra dirección.<br />
+        Si consideras que tus derechos no han sido respetados, puedes reclamar ante la <a href="https://www.aepd.es/" target="_blank" rel="noopener noreferrer">Agencia Española de Protección de Datos</a>.
       </p>
 
       <h2>8. Seguridad y confidencialidad</h2>
@@ -83,7 +85,7 @@ export default function Privacidad() {
 
       <h2>10. Política de cookies</h2>
       <p>
-        Esta web utiliza cookies propias y de terceros para analizar el tráfico y mejorar la experiencia de usuario. Puedes consultar la <a href="/cookies" target="_blank">política de cookies</a> para más detalles y gestionar tus preferencias.
+        Esta web utiliza cookies propias y de terceros para analizar el tráfico y mejorar la experiencia de usuario. Puedes consultar la <Link href="/cookies">política de cookies</Link> para más detalles y gestionar tus preferencias.
       </p>
 
       <h2>11. Cambios en la política de privacidad</h2>
@@ -94,7 +96,7 @@ export default function Privacidad() {
 
       <h2>12. Contacto</h2>
       <p>
-        Para cualquier duda sobre esta política o el tratamiento de tus datos, puedes escribirnos a <b>privacidad@antea.com</b> o llamarnos al 912 345 678.
+        Para cualquier duda sobre esta política o el tratamiento de tus datos, puedes escribirnos a <a href="mailto:privacidad@antea.com">privacidad@antea.com</a> o llamarnos al 912 345 678.
       </p>
     </div>
   );

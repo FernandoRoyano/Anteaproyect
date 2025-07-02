@@ -47,20 +47,20 @@ const planes: Plan[] = [
       '1 sesión de fisioterapia/mes incluida',
       'Acceso a talleres online exclusivos',
     ],
-  },
-  {
-    nombre: 'Conecta Online',
-    precio: '197€',
-    sesiones: '2/semana',
-    duracion: '30 min',
-    tagline: 'Resultados sin salir de casa. Perfecto para familias lejos.',
-    extras: [
-      'Sesiones 100% online',
-      'Informe semanal digital',
-      'Soporte WhatsApp',
-    ],
-  },
+  }
 ];
+
+// Info del plan online como bloque aparte
+const planOnline = {
+  nombre: 'Conecta Online',
+  precio: '197€',
+  tagline: 'Resultados sin salir de casa. Perfecto para familias lejos.',
+  extras: [
+    'Sesiones 100% online',
+    'Informe semanal digital',
+    'Soporte WhatsApp',
+  ],
+};
 
 export default function Planes() {
   return (
@@ -100,6 +100,23 @@ export default function Planes() {
           </div>
         ))}
       </div>
+
+      <div className={styles.onlineBlock}>
+        <h4>
+          ¿Vives lejos de tus padres? <span className={styles.onlineTag}>También online</span>
+        </h4>
+        <p className={styles.onlineDesc}>
+          {planOnline.tagline}
+        </p>
+        <ul className={styles.onlineExtras}>
+          {planOnline.extras.map((extra, i) => (
+            <li key={i}>{extra}</li>
+          ))}
+        </ul>
+        <div className={styles.onlinePrecio}><b>{planOnline.precio}</b> al mes</div>
+        <button className={styles.botonSecundario}>Solicitar info del plan online</button>
+      </div>
+
       <p className={styles.comparativa}>
         ¿Vas a dejar la salud de tus padres en manos de un cuidador que solo “vigila”? ANTEA transforma vidas.
       </p>
