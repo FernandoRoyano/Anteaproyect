@@ -7,22 +7,14 @@ export default function Footer() {
       <p>&copy; {new Date().getFullYear()} ANTEA. Todos los derechos reservados.</p>
       <div className={styles.columns}>
         <div className={styles.col}>
-          {/* Estos sí pueden ser <a> porque son anchors a secciones de la MISMA página */}
           <a href="#planes">Planes</a>
           <a href="#testimonios">Testimonios</a>
           <a href="#contacto">Contacto</a>
         </div>
         <div className={styles.col}>
-          {/* Para páginas internas, SIEMPRE <Link /> */}
-          <Link href="/privacidad/" passHref>
-            Privacidad
-          </Link>
-          <Link href="/aviso-legal/" passHref>
-            Aviso Legal
-          </Link>
-          <Link href="/cookies/" passHref>
-            Cookies
-          </Link>
+          <Link href="/privacidad/">Privacidad</Link>
+          <Link href="/aviso-legal/">Aviso Legal</Link>
+          <Link href="/cookies/">Cookies</Link>
         </div>
       </div>
     </footer>
