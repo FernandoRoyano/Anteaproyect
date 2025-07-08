@@ -110,17 +110,18 @@ export default function Planes() {
           <span className={styles.onlineDisponible}>También online</span>
         </div>
         <p className={styles.onlineDesc}>
-          Resultados sin salir de casa.<br />
-          <span className={styles.onlineNota}>Perfecto para familias lejos.</span>
+          {planOnline.tagline.split('. ')[0]}.
+          <br />
+          <span className={styles.onlineNota}>{planOnline.tagline.split('. ')[1]}</span>
         </p>
         <ul className={styles.onlineExtras}>
-          <li>✅ Sesiones 100% online</li>
-          <li>✅ Informe semanal digital</li>
-          <li>✅ Soporte WhatsApp</li>
+          {planOnline.extras.map((extra, i) => (
+            <li key={i}>✅ {extra}</li>
+          ))}
         </ul>
-        <div className={styles.onlinePrecio}><b>197€</b> al mes</div>
+          <div className={styles.onlinePrecio}><b>{planOnline.precio}</b> al mes</div>
         <a
-         href="https://wa.me/34633261963"
+          href="https://wa.me/34633261963"
           target="_blank"
           rel="noopener noreferrer"
           className={styles.botonSecundario}

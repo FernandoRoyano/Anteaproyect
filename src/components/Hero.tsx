@@ -5,16 +5,21 @@ export default function Hero() {
     <section className={styles.hero}>
       <div className={styles.container}>
         <h1 className={styles.title}>
-          Recupera a la persona que siempre fue.
+          Recupera a la persona <br />que siempre fue.
         </h1>
         <p className={styles.subtitle}>
           No es solo movilidad, es volver a verles sonreír, levantarse solos y sentirse vivos. <br />
           Entrenamiento funcional y compañía real para mayores. <br />
           Tú recuperas la paz. Ellos, la vida.
         </p>
-        <button className={styles.button}>
+        <a
+          href="https://wa.me/34633261963"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={styles.button}
+        >
           Solicita tu sesión gratuita
-        </button>
+        </a>
         <p className={styles.urgencia}>
           <strong>Solo 5 familias nuevas al mes. Si te importa, actúa ahora.</strong>
         </p>

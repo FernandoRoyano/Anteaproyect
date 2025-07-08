@@ -7,6 +7,9 @@ export default function Header() {
 
   const toggleMenu = () => setMenuAbierto(!menuAbierto);
 
+  // Cierra el menú al hacer click en cualquier enlace
+  const handleLinkClick = () => setMenuAbierto(false);
+
   return (
     <header className={styles.header}>
       <div className={styles.container}>
@@ -20,14 +23,22 @@ export default function Header() {
           />
         </div>
 
-        <button className={styles.toggle} onClick={toggleMenu}>
+        <button className={styles.toggle} onClick={toggleMenu} aria-label="Abrir menú">
           ☰
         </button>
 
         <nav className={`${styles.nav} ${menuAbierto ? styles.abierto : ''}`}>
-          <a href="#planes">Planes</a>
-          <a href="#testimonios">Testimonios</a>
-          <a href="#contacto" className={styles.cta}>Solicita sesión</a>
+          <a href="#planes" onClick={handleLinkClick}>Planes</a>
+          <a href="#testimonios" onClick={handleLinkClick}>Testimonios</a>
+<a
+  href="https://wa.me/34633261963?text=Hola%20me%20gustaría%20más%20info%20sobre%20ANTEA"
+  target="_blank"
+  rel="noopener noreferrer"
+  className={styles.cta}
+  onClick={handleLinkClick}
+>
+  Solicita sesión
+</a>
         </nav>
       </div>
     </header>

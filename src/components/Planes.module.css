@@ -1,21 +1,23 @@
 .planes {
   background-color: #f9f9f9;
-  padding: 80px 20px;
+  padding: 80px 0px;
   text-align: center;
 }
-
-.titulo {
-  font-size: 2rem;
-  margin-bottom: 50px;
-  color: #174B8C;
-}
-
 .grid {
   display: grid;
   gap: 30px;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   max-width: 1200px;
   margin: auto;
+  padding: 0 12px;
+  box-sizing: border-box;
+  margin-bottom: 50px;   /* Aire entre planes y bloque online */
+}
+
+.titulo {
+  font-size: 2rem;
+  margin-bottom: 50px;
+  color: #174B8C;
 }
 
 .card {
@@ -93,14 +95,17 @@
   position: relative;
   z-index: 1;
 }
+
+/* ----------- BLOQUE ONLINE ----------- */
 .onlineBlock {
   background: #f4f8f6;
   border: 2px dashed #25d366;
   border-radius: 14px;
   box-shadow: 0 2px 18px rgba(0,0,0,0.06);
-  margin: 48px auto 18px auto;      /* MÁS margen arriba, aire con las tarjetas */
+  margin: 0 auto 22px auto;      /* Más aire abajo, SIN margen top */
   max-width: 400px;
-  padding: 30px 22px 24px 22px;     /* Más padding */
+  width: 100%;
+  padding: 30px 18px 24px 18px;
   text-align: center;
   transition: box-shadow 0.2s;
   display: flex;
@@ -175,6 +180,7 @@
   transition: background 0.18s, color 0.18s;
   text-decoration: none;
   display: inline-block;
+  margin-top: 18px;
 }
 .botonSecundario:hover {
   background: #25d366;
@@ -182,9 +188,13 @@
 }
 
 @media (max-width: 600px) {
+  .grid {
+    margin-bottom: 32px;
+    padding: 0 4vw;
+  }
   .onlineBlock {
-    max-width: 98vw;
-    padding: 18px 7vw 14px 7vw;
-    margin-top: 28px;
+    max-width: 99vw;
+    padding: 18px 5vw 16px 5vw;
+    margin-bottom: 16px;
   }
 }
