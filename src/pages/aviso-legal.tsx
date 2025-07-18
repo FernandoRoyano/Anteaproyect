@@ -10,7 +10,7 @@ export default function AvisoLegal() {
         <h1>Aviso Legal</h1>
         <p>En cumplimiento del artículo 10 de la Ley 34/2002, se informa:</p>
         <p><strong>Titular:</strong> ANTEA</p>
-        <p><strong>Correo electrónico:</strong> contacto@antea.com (reemplaza con el real)</p>
+        <p><strong>Correo electrónico:</strong> contacto@antea.com</p>
         <p><strong>Actividad:</strong> Servicios de entrenamiento físico y acompañamiento para personas mayores a domicilio.</p>
         <p>Queda prohibido el uso indebido de los contenidos de este sitio web. El acceso y uso implica la aceptación de este aviso legal.</p>
       </main>

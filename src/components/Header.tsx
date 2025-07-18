@@ -27,19 +27,20 @@ export default function Header() {
           ☰
         </button>
 
-        <nav className={`${styles.nav} ${menuAbierto ? styles.abierto : ''}`}>
-          <a href="#planes" onClick={handleLinkClick}>Planes</a>
-          <a href="#testimonios" onClick={handleLinkClick}>Testimonios</a>
-<a
-  href="https://wa.me/34633261963?text=Hola%20me%20gustaría%20más%20info%20sobre%20ANTEA"
-  target="_blank"
-  rel="noopener noreferrer"
-  className={styles.cta}
-  onClick={handleLinkClick}
->
-  Solicita sesión
-</a>
-        </nav>
+<nav className={`${styles.nav} ${menuAbierto ? styles.abierto : ''}`}>
+  <a href="#planes" onClick={handleLinkClick}>Planes</a>
+  <a href="#testimonios" onClick={handleLinkClick}>Testimonios</a>
+  <a href="/blog" onClick={handleLinkClick}>Blog</a>
+  <a
+    href="https://wa.me/34633261963"
+    target="_blank"
+    rel="noopener noreferrer"
+    className={styles.cta}
+    onClick={handleLinkClick}
+  >
+    Solicita sesión
+  </a>
+</nav>
       </div>
     </header>
   );

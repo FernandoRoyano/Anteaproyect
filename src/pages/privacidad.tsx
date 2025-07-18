@@ -11,9 +11,8 @@ export default function Privacidad() {
       <h2>1. Responsable del tratamiento</h2>
       <address>
         <strong>Responsable:</strong> ANTEA, S.L.<br />
-        <strong>CIF:</strong> B12345678<br />
-        <strong>Dirección:</strong> Calle Mayor, 123, 28000 Madrid, España<br />
-        <strong>Teléfono:</strong> 912 345 678<br />
+        <strong>CIF:</strong> 72171129G<br />
+        <strong>Teléfono:</strong> 633 261 963<br />
         <strong>Email:</strong> <a href="mailto:privacidad@antea.com">privacidad@antea.com</a>
       </address>
 
@@ -96,7 +95,7 @@ export default function Privacidad() {
 
       <h2>12. Contacto</h2>
       <p>
-        Para cualquier duda sobre esta política o el tratamiento de tus datos, puedes escribirnos a <a href="mailto:privacidad@antea.com">privacidad@antea.com</a> o llamarnos al 912 345 678.
+        Para cualquier duda sobre esta política o el tratamiento de tus datos, puedes escribirnos a <a href="mailto:privacidad@antea.com">privacidad@antea.com</a> o llamarnos al 633 26 19 63.
       </p>
     </div>
   );
