@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import styles from './Header.module.css';
+import Link from 'next/link';
 
 export default function Header() {
   const [menuAbierto, setMenuAbierto] = useState(false);
@@ -28,9 +29,17 @@ export default function Header() {
         </button>
 
 <nav className={`${styles.nav} ${menuAbierto ? styles.abierto : ''}`}>
-  <a href="#planes" onClick={handleLinkClick}>Planes</a>
-  <a href="#testimonios" onClick={handleLinkClick}>Testimonios</a>
-  <a href="/blog" onClick={handleLinkClick}>Blog</a>
+  <ul className={styles.navList}>
+    <li className={styles.navItem}><a href="#comparativa" className={styles.navLink}>Comparativa</a></li>
+    <li className={styles.navItem}><a href="#planes" className={styles.navLink}>Planes</a></li>
+    <li className={styles.navItem}><a href="#testimonios" className={styles.navLink}>Testimonios</a></li>
+    <li className={styles.navItem}><a href="#contacto" className={styles.navLink}>Contacto</a></li>
+    <li className={styles.navItem}>
+      <Link href="/blog" legacyBehavior>
+        <a className={styles.navLink}>Blog</a>
+      </Link>
+    </li>
+  </ul>
   <a
     href="https://wa.me/34633261963"
     target="_blank"

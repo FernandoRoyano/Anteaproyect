@@ -6,7 +6,15 @@ import HeaderBlog from '@/components/HeaderBlog';
 import Footer from '@/components/Footer';
 import Image from 'next/image';
 
-export default function Blog({ posts }: { posts: any[] }) {
+interface Post {
+  slug: string;
+  title: string;
+  date: string;
+  excerpt: string;
+  image?: string; // Hacemos la imagen opcional por si algún post no la tiene
+}
+
+export default function Blog({ posts }: { posts: Post[] }) {
   return (
     <>
       <HeaderBlog />
