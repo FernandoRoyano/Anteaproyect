@@ -34,6 +34,20 @@
   gap: 20px;
 }
 
+.navList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+}
+
 .nav a {
   text-decoration: none;
   color: #174B8C;
@@ -85,5 +99,11 @@
 
   .nav.abierto {
     display: flex;
+  }
+
+  .navList {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-end;
   }
 }

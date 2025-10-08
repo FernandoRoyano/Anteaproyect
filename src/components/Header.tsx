@@ -30,7 +30,6 @@ export default function Header() {
 
 <nav className={`${styles.nav} ${menuAbierto ? styles.abierto : ''}`}>
   <ul className={styles.navList}>
-    <li className={styles.navItem}><a href="#comparativa" className={styles.navLink}>Comparativa</a></li>
     <li className={styles.navItem}><a href="#planes" className={styles.navLink}>Planes</a></li>
     <li className={styles.navItem}><a href="#testimonios" className={styles.navLink}>Testimonios</a></li>
     <li className={styles.navItem}><a href="#contacto" className={styles.navLink}>Contacto</a></li>

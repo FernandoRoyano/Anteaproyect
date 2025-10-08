@@ -5,7 +5,15 @@ import Image from 'next/image';
 import Link from 'next/link';
 import styles from '@/styles/BlogPost.module.css'; // CREA ESTE CSS SI AÚN NO LO TIENES
 
-export default function BlogPost({ post }: { post: any }) {
+interface Post {
+  slug: string;
+  title: string;
+  date: string;
+  content: string;
+  image?: string;
+}
+
+export default function BlogPost({ post }: { post: Post }) {
   if (!post) return <div>No encontrado</div>;
   return (
     <main className={styles.main}>

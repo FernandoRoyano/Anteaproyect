@@ -4,7 +4,7 @@ import styles from './WhatsappButton.module.css';
 export default function WhatsappButton() {
   return (
     <a
-      href="https://wa.me/34633261963?text=Hola%20quiero%20más%20info%20sobre%20ANTEA"
+      href="https://wa.me/message/3DG5Q5JRABXJN1"
       className={styles.whatsapp}
       target="_blank"
       rel="noopener noreferrer"
