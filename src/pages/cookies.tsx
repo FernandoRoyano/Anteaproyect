@@ -1,66 +1,126 @@
-export default function Cookies() {
+import { useState, useEffect } from 'react';
+import styles from './CookiesBanner.module.css';
+
+export default function CookiesBanner() {
+  const [showBanner, setShowBanner] = useState(false);
+  const [showDetails, setShowDetails] = useState(false);
+
+  useEffect(() => {
+    // Verificar si el usuario ya aceptó cookies
+    const consent = localStorage.getItem('antea-cookies-consent');
+    if (!consent) {
+      setShowBanner(true);
+    }
+  }, []);
+
+  const acceptAllCookies = () => {
+    localStorage.setItem('antea-cookies-consent', 'all');
+    localStorage.setItem('antea-cookies-date', new Date().toISOString());
+    setShowBanner(false);
+    
+    // Activar Google Analytics u otros scripts
+    if (typeof window !== 'undefined' && (window as any).gtag) {
+      (window as any).gtag('consent', 'update', {
+        analytics_storage: 'granted'
+      });
+    }
+  };
+
+  const acceptEssentialOnly = () => {
+    localStorage.setItem('antea-cookies-consent', 'essential');
+    localStorage.setItem('antea-cookies-date', new Date().toISOString());
+    setShowBanner(false);
+  };
+
+  const rejectAll = () => {
+    localStorage.setItem('antea-cookies-consent', 'rejected');
+    localStorage.setItem('antea-cookies-date', new Date().toISOString());
+    setShowBanner(false);
+  };
+
+  if (!showBanner) return null;
+
   return (
-    <div style={{ maxWidth: 800, margin: "0 auto", padding: 32 }}>
-      <h1>Política de Cookies</h1>
+    <div className={styles.cookieBanner}>
+      <div className={styles.cookieContent}>
+        <div className={styles.cookieMain}>
+          <div className={styles.cookieInfo}>
+            <h3 className={styles.cookieTitle}>🍪 Uso de Cookies</h3>
+            <p className={styles.cookieText}>
+              En ANTEA SALUD utilizamos cookies para mejorar tu experiencia de navegación, 
+              analizar el tráfico web y personalizar el contenido. 
+              <strong> Tu privacidad es importante para nosotros.</strong>
+            </p>
+          </div>
 
-      <p>
-        En <b>ANTEA, S.L.</b> utilizamos cookies para mejorar la experiencia de usuario, analizar el uso de la web y mostrarte contenidos personalizados. Cumplimos la legislación vigente (RGPD, LSSI-CE).
-      </p>
+          <div className={styles.cookieButtons}>
+            <button 
+              onClick={acceptAllCookies}
+              className={styles.acceptAll}
+            >
+              ✅ Aceptar todas
+            </button>
+            <button 
+              onClick={acceptEssentialOnly}
+              className={styles.acceptEssential}
+            >
+              🔧 Solo esenciales
+            </button>
+            <button 
+              onClick={() => setShowDetails(!showDetails)}
+              className={styles.customize}
+            >
+              ⚙️ Personalizar
+            </button>
+          </div>
+        </div>
 
-      <h2>¿Qué son las cookies?</h2>
-      <p>
-        Las cookies son pequeños archivos de texto que se almacenan en tu navegador cuando visitas una web. Sirven para recordar tus preferencias y ofrecerte una mejor experiencia de navegación.
-      </p>
+        {showDetails && (
+          <div className={styles.cookieDetails}>
+            <div className={styles.cookieCategories}>
+              <div className={styles.cookieCategory}>
+                <h4>🔧 Cookies Esenciales</h4>
+                <p>Necesarias para el funcionamiento básico del sitio web (formulario de contacto, navegación).</p>
+                <label className={styles.cookieToggle}>
+                  <input type="checkbox" checked disabled />
+                  <span>Siempre activas</span>
+                </label>
+              </div>
+              
+              <div className={styles.cookieCategory}>
+                <h4>📊 Cookies Analíticas</h4>
+                <p>Nos ayudan a entender cómo interactúas con nuestra web para mejorar nuestros servicios.</p>
+                <label className={styles.cookieToggle}>
+                  <input type="checkbox" defaultChecked />
+                  <span>Google Analytics</span>
+                </label>
+              </div>
+              
+              <div className={styles.cookieCategory}>
+                <h4>💬 Cookies de Marketing</h4>
+                <p>Para mostrar contenido relevante sobre nuestros servicios de ejercicio para mayores.</p>
+                <label className={styles.cookieToggle}>
+                  <input type="checkbox" defaultChecked />
+                  <span>WhatsApp, Meta Pixel</span>
+                </label>
+              </div>
+            </div>
 
-      <h2>¿Qué tipos de cookies usamos?</h2>
-      <ul>
-        <li>
-          <b>Cookies técnicas:</b> Son necesarias para que la web funcione correctamente y puedas navegar y usar sus funciones básicas.
-        </li>
-        <li>
-          <b>Cookies de personalización:</b> Permiten recordar tus preferencias (por ejemplo, idioma o configuración).
-        </li>
-        <li>
-          <b>Cookies de análisis:</b> Nos ayudan a entender cómo usas la web y mejorar nuestros servicios. Por ejemplo, usamos Google Analytics, que puede recopilar datos anónimos sobre páginas visitadas, tiempo en la web, etc.
-        </li>
-        <li>
-          <b>Cookies de terceros:</b> Algunas funcionalidades (por ejemplo, vídeos de YouTube, mapas, herramientas de marketing o redes sociales) pueden instalar cookies propias de esos servicios.
-        </li>
-      </ul>
-
-      <h2>¿Quién usa la información de las cookies?</h2>
-      <p>
-        La información puede ser tratada por <b>ANTEA, S.L.</b> y, en algunos casos, por terceros como Google Analytics, YouTube, Facebook o EmailJS, siempre bajo su propia política de privacidad y en cumplimiento de la ley.
-      </p>
-
-      <h2>¿Cómo puedes gestionar las cookies?</h2>
-      <ul>
-        <li>
-          Al acceder por primera vez a la web, puedes aceptar o rechazar todas o parte de las cookies desde el banner de consentimiento.
-        </li>
-        <li>
-          Puedes cambiar tus preferencias en cualquier momento desde la configuración de cookies disponible en la web.
-        </li>
-        <li>
-          Además, puedes eliminar o bloquear las cookies desde la configuración de tu navegador (Chrome, Firefox, Safari, Edge…).
-        </li>
-      </ul>
-
-      <h2>¿Qué ocurre si desactivas las cookies?</h2>
-      <p>
-        Algunas funciones de la web podrían no funcionar correctamente y la experiencia de usuario puede verse limitada.
-      </p>
-
-      <h2>Actualizaciones de la política de cookies</h2>
-      <p>
-        Podemos actualizar esta política en cualquier momento para adaptarla a cambios legales o técnicos. Te recomendamos revisarla periódicamente.<br />
-        Última actualización: Julio 2025.
-      </p>
-
-      <h2>Más información y contacto</h2>
-      <p>
-        Si tienes dudas sobre el uso de cookies, contacta con nosotros en <b>privacidad@antea.com</b>
-      </p>
+            <div className={styles.detailButtons}>
+              <button onClick={rejectAll} className={styles.rejectAll}>
+                ❌ Rechazar no esenciales
+              </button>
+              <button onClick={acceptAllCookies} className={styles.acceptAll}>
+                ✅ Confirmar selección
+              </button>
+            </div>
+            
+            <p className={styles.policyLink}>
+              Lee nuestra <a href="/cookies/" target="_blank">Política de Cookies</a> completa.
+            </p>
+          </div>
+        )}
+      </div>
     </div>
   );
 }

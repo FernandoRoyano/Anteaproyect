@@ -11,35 +11,69 @@ export default function CookieBanner() {
 
   const handleAcceptAll = () => {
     localStorage.setItem("cookiesAccepted", "all");
+    localStorage.setItem("cookiesDate", new Date().toISOString());
     setVisible(false);
-    // Aquí podrías activar scripts analíticos o de marketing
-    // window.gtag('consent', 'update', { 'analytics_storage': 'granted' });
+    
+    // Activar Google Analytics
+    if (typeof window !== 'undefined' && (window as any).gtag) {
+      (window as any).gtag('consent', 'update', { 
+        'analytics_storage': 'granted',
+        'ad_storage': 'granted'
+      });
+    }
   };
 
   const handleOnlyNecessary = () => {
     localStorage.setItem("cookiesAccepted", "necessary");
+    localStorage.setItem("cookiesDate", new Date().toISOString());
     setVisible(false);
-    // Aquí podrías bloquear cookies no esenciales
-    // window.gtag('consent', 'update', { 'analytics_storage': 'denied' });
+    
+    // Bloquear cookies no esenciales
+    if (typeof window !== 'undefined' && (window as any).gtag) {
+      (window as any).gtag('consent', 'update', { 
+        'analytics_storage': 'denied',
+        'ad_storage': 'denied'
+      });
+    }
   };
 
   if (!visible) return null;
 
   return (
     <div className={styles.cookieBanner}>
-      <span className={styles.text}>
-        Usamos cookies para mejorar tu experiencia y analizar el uso de la web.
-        <a href="/cookies" target="_blank" rel="noopener noreferrer" className={styles.link}>
-          Política de Cookies
-        </a>
-      </span>
-      <div className={styles.buttonGroup}>
-        <button onClick={handleOnlyNecessary} className={styles.buttonOutline}>
-          Solo imprescindibles
-        </button>
-        <button onClick={handleAcceptAll} className={styles.button}>
-          Aceptar todas
-        </button>
+      <div className={styles.content}>
+        <div className={styles.text}>
+          <span className={styles.icon}>🍪</span>
+          <span>
+            <strong>ANTEA SALUD</strong> utiliza cookies para mejorar tu experiencia 
+            navegando por nuestra web de ejercicio funcional para personas mayores en Madrid.
+            <a 
+              href="/cookies" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className={styles.link}
+            >
+              Política de Cookies
+            </a>
+          </span>
+        </div>
+        
+        <div className={styles.buttonGroup}>
+          <button 
+            onClick={handleOnlyNecessary} 
+            className={styles.buttonOutline}
+            title="Solo cookies técnicas necesarias"
+          >
+            Solo esenciales
+          </button>
+          <button 
+            onClick={handleAcceptAll} 
+            className={styles.button}
+            title="Aceptar todas las cookies"
+          >
+            ✅ Aceptar todas
+          </button>
+        </div>
       </div>
     </div>
   );
