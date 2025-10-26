@@ -21,7 +21,6 @@ export default function Contacto() {
     if (!form.current) return;
 
     actualizarOpciones();
-
     setEnviando(true);
     setEstado('');
 
@@ -40,71 +39,165 @@ export default function Contacto() {
 
   return (
     <section id="contacto" className={styles.contacto}>
-      <h2 className={styles.titulo}>Contáctanos</h2>
+      <div className={styles.container}>
+        <h2 className={styles.titulo}>
+          Solicita tu Evaluación Gratuita de Ejercicio para Mayores en Madrid
+        </h2>
+        <p className={styles.subtitulo}>
+          Primera valoración sin compromiso. Solo 5 nuevas familias al mes.
+        </p>
 
-      <form ref={form} onSubmit={enviarCorreo} className={styles.formulario}>
-        <input
-          type="text"
-          name="user_name"
-          placeholder="Tu nombre"
-          required
-          className={styles.campo}
-        />
-        <input
-          type="email"
-          name="user_email"
-          placeholder="Tu email"
-          required
-          className={styles.campo}
-        />
-        <textarea
-          name="message"
-          placeholder="¿En qué podemos ayudarte?"
-          required
-          className={styles.campo}
-          rows={5}
-        ></textarea>
+        <div className={styles.contactoGrid}>
+          {/* Contacto Directo */}
+          <div className={styles.contactoDirecto}>
+            <h3>📞 Contacto Inmediato</h3>
+            <a 
+              href="https://wa.me/34633261963?text=Hola,%20quiero%20información%20sobre%20ejercicio%20para%20personas%20mayores%20a%20domicilio"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.whatsapp}
+            >
+              📱 WhatsApp: 633 261 963
+            </a>
+            <a 
+              href="tel:+34633261963"
+              className={styles.telefono}
+            >
+              📞 Llamar ahora: 633 261 963
+            </a>
 
-        <label>
+            <div className={styles.info}>
+              <div className={styles.infoItem}>
+                <h4>⏰ Horario</h4>
+                <p><strong>L-V:</strong> 9:00-13:00 | 16:00-19:00</p>
+                <p><strong>Sáb:</strong> 9:00-13:00</p>
+              </div>
+              
+              <div className={styles.infoItem}>
+                <h4>📍 Zona Servicio</h4>
+                <p>Madrid Capital y alrededores</p>
+                <p><small>Pozuelo • Las Rozas • Majadahonda • Alcobendas</small></p>
+              </div>
+            </div>
+          </div>
 
-          <label className={styles.label}>
-  ¿Qué necesitas? (puedes marcar varias)
-</label>
-<div className={styles.checkCards}>
-  <label className={styles.card}>
-    <input type="checkbox" name="opciones" value="Evaluación inicial" onChange={actualizarOpciones} />
-    <span>✅ Evaluación inicial</span>
-  </label>
-  <label className={styles.card}>
-    <input type="checkbox" name="opciones" value="Plan de entrenamiento" onChange={actualizarOpciones} />
-    <span>🏋️‍♂️ Plan de entrenamiento</span>
-  </label>
-  <label className={styles.card}>
-    <input type="checkbox" name="opciones" value="Rehabilitación en casa" onChange={actualizarOpciones} />
-    <span>🏠 Rehabilitación en casa</span>
-  </label>
-  <label className={styles.card}>
-    <input type="checkbox" name="opciones" value="Videollamada informativa" onChange={actualizarOpciones} />
-    <span>📞 Videollamada informativa</span>
-  </label>
-  <label className={styles.card}>
-    <input type="checkbox" name="opciones" value="No estoy seguro/a, necesito orientación" onChange={actualizarOpciones} />
-    <span>❓ Necesito orientación</span>
-  </label>
-</div>
+          {/* Formulario */}
+          <div className={styles.formularioContainer}>
+            <h3>✍️ O escríbenos aquí</h3>
+            
+            <form ref={form} onSubmit={enviarCorreo} className={styles.formulario}>
+              <input
+                type="text"
+                name="user_name"
+                placeholder="Tu nombre completo"
+                required
+                className={styles.campo}
+              />
+              
+              <input
+                type="email"
+                name="user_email"
+                placeholder="Tu email"
+                required
+                className={styles.campo}
+              />
+              
+              <input
+                type="tel"
+                name="user_phone"
+                placeholder="Teléfono de contacto"
+                className={styles.campo}
+              />
+              
+              <select name="ubicacion" className={styles.campo} required>
+                <option value="">¿En qué zona necesitas el servicio?</option>
+                <option value="Madrid Centro">Madrid Centro</option>
+                <option value="Madrid Norte">Madrid Norte</option>
+                <option value="Madrid Sur">Madrid Sur</option>
+                <option value="Madrid Este">Madrid Este</option>
+                <option value="Madrid Oeste">Madrid Oeste</option>
+                <option value="Pozuelo">Pozuelo de Alarcón</option>
+                <option value="Las Rozas">Las Rozas</option>
+                <option value="Majadahonda">Majadahonda</option>
+                <option value="Alcobendas">Alcobendas</option>
+                <option value="Otra">Otra zona</option>
+              </select>
 
-        </label>
+              <textarea
+                name="message"
+                placeholder="Cuéntanos: ¿edad?, ¿situación actual?, ¿objetivos?..."
+                required
+                className={styles.campo}
+                rows={4}
+              />
 
-        {/* Campo oculto para EmailJS */}
-        <input type="hidden" name="opciones_resumen" />
+              <div className={styles.opciones}>
+                <label className={styles.label}>¿Qué te interesa?</label>
+                <div className={styles.checkboxes}>
+                  <label className={styles.checkbox}>
+                    <input type="checkbox" name="opciones" value="Evaluación gratuita" onChange={actualizarOpciones} />
+                    <span>🔍 Evaluación gratuita</span>
+                  </label>
+                  <label className={styles.checkbox}>
+                    <input type="checkbox" name="opciones" value="Programa básico" onChange={actualizarOpciones} />
+                    <span>💪 Programa básico (4 sesiones)</span>
+                  </label>
+                  <label className={styles.checkbox}>
+                    <input type="checkbox" name="opciones" value="Programa integral" onChange={actualizarOpciones} />
+                    <span>🎯 Programa integral (8 sesiones)</span>
+                  </label>
+                  <label className={styles.checkbox}>
+                    <input type="checkbox" name="opciones" value="Solo información" onChange={actualizarOpciones} />
+                    <span>ℹ️ Solo información y precios</span>
+                  </label>
+                </div>
+              </div>
 
-        <button type="submit" className={styles.boton} disabled={enviando}>
-          {enviando ? 'Enviando...' : 'Enviar mensaje'}
-        </button>
+              <input type="hidden" name="opciones_resumen" />
 
-        {estado === 'ok' && <p className={styles.ok}>✅ ¡Mensaje enviado correctamente!</p>}
-        {estado === 'error' && <p className={styles.error}>❌ Hubo un error al enviar. Inténtalo de nuevo.</p>}
-      </form>
+              <button type="submit" className={styles.boton} disabled={enviando}>
+                {enviando ? 'Enviando...' : '📧 Solicitar información'}
+              </button>
+
+              {estado === 'ok' && (
+                <div className={styles.exito}>
+                  <h4>✅ ¡Mensaje enviado!</h4>
+                  <p>Te contactaremos en menos de 24h para programar tu evaluación gratuita.</p>
+                </div>
+              )}
+              
+              {estado === 'error' && (
+                <div className={styles.error}>
+                  <h4>❌ Error al enviar</h4>
+                  <p>Por favor, inténtalo de nuevo o contáctanos por WhatsApp.</p>
+                </div>
+              )}
+            </form>
+          </div>
+        </div>
+
+        {/* Garantías */}
+        <div className={styles.garantias}>
+          <h3>🛡️ Tu Tranquilidad es Nuestra Prioridad</h3>
+          <div className={styles.garantiasGrid}>
+            <div className={styles.garantia}>
+              <span className={styles.garantiaIcon}>🆓</span>
+              <h4>Primera Sesión Gratis</h4>
+              <p>Sin compromiso ni letra pequeña</p>
+            </div>
+            <div className={styles.garantia}>
+              <span className={styles.garantiaIcon}>👨‍⚕️</span>
+              <h4>Profesional Titulado</h4>
+              <p>Especializado en personas mayores</p>
+            </div>
+            <div className={styles.garantia}>
+              <span className={styles.garantiaIcon}>📊</span>
+              <h4>Resultados Medibles</h4>
+              <p>Progreso documentado cada semana</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
   );
 }

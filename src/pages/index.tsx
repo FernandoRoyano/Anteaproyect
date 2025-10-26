@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>ANTEA – Más movimiento. Más vida. Menos dependencia.</title>
+        <title>Entrenador Personal Mayores Madrid | Ejercicio a Domicilio | ANTEA</title>
         <meta name="description" content="Recupera la movilidad y la vitalidad de tus padres o familiares senior. Entrenamiento funcional y acompañamiento emocional para adultos mayores, en casa o online. Solicita tu sesión gratuita y transforma su vida hoy." />
       </Head>
       <main>

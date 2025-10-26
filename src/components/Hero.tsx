@@ -5,23 +5,36 @@ export default function Hero() {
     <section className={styles.hero}>
       <div className={styles.container}>
         <h1 className={styles.title}>
-          Recupera a la persona <br />que siempre fue.
+          Entrenador Personal para Personas Mayores en Madrid
         </h1>
+        <h2 className={styles.subtitle_seo}>
+          Ejercicio Funcional a Domicilio - Recupera tu Independencia
+        </h2>
         <p className={styles.subtitle}>
-          No es solo movilidad, es volver a verles sonreír, levantarse solos y sentirse vivos. <br />
-          Entrenamiento funcional y compañía real para mayores. <br />
-          Tú recuperas la paz. Ellos, la vida.
+          Especialistas en ejercicio terapéutico personalizado para mayores. <br />
+          Recuperamos movilidad, fuerza y confianza en la comodidad de tu hogar. <br />
+          Método basado en evidencia científica con resultados medibles.
         </p>
+        
+        <div className={styles.benefits}>
+          ✓ Primera valoración GRATUITA • ✓ Profesional titulado • ✓ Material incluido
+        </div>
+        
         <a
-          href="https://wa.me/34633261963"
+          href="https://wa.me/34633261963?text=Hola,%20quiero%20información%20sobre%20la%20valoración%20gratuita%20de%20ejercicio%20en%20casa"
           target="_blank"
           rel="noopener noreferrer"
           className={styles.button}
         >
-          Solicita tu sesión gratuita
+          📞 Solicita tu valoración gratuita
         </a>
+        
+        <p className={styles.ubicacion}>
+          📍 Madrid • Pozuelo • Las Rozas • Majadahonda • Alcobendas
+        </p>
+        
         <p className={styles.urgencia}>
-          <strong>Solo 5 familias nuevas al mes. Si te importa, actúa ahora.</strong>
+          <strong>⏰ Solo 5 nuevas familias al mes - Plazas limitadas</strong>
         </p>
       </div>
     </section>
