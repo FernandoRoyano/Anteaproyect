@@ -16,7 +16,7 @@ export default function Contacto() {
     if (campo) campo.value = seleccionadas.join(', ');
   };
 
-  const enviarCorreo = (e: React.FormEvent) => {
+  const enviarCorreo = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!form.current) return;
 
@@ -24,17 +24,45 @@ export default function Contacto() {
     setEnviando(true);
     setEstado('');
 
-    emailjs
-      .sendForm('service_zsg0e8k', 'template_dvfunnt', form.current, 'YqaBS775_UBQweZfz')
-      .then(() => {
-        setEnviando(false);
-        setEstado('ok');
-        form.current?.reset();
-      })
-      .catch(() => {
-        setEnviando(false);
-        setEstado('error');
-      });
+    // 🔍 DEBUG: Log configuration
+    console.log('=== CONFIGURACIÓN EMAILJS ===');
+    console.log('Service ID:', 'service_antea_contacto');
+    console.log('Template ID:', 'Antea Salud');
+    console.log('Public Key:', 'GkuifuSj9iMoXN9fw');
+
+    // 🔍 DEBUG: Log form data
+    const formData = new FormData(form.current);
+    console.log('=== DATOS DEL FORMULARIO ===');
+    for (let [key, value] of formData.entries()) {
+      console.log(`${key}: "${value}"`);
+    }
+
+    try {
+      const result = await emailjs.sendForm(
+        'service_antea_contacto',    // ✅ Service ID correcto
+        'Antea Salud',               // ✅ Template ID correcto
+        form.current, 
+        'GkuifuSj9iMoXN9fw'         // ✅ Public Key correcta
+      );
+      
+      console.log('✅ EmailJS SUCCESS:', result);
+      console.log('Status:', result.status);
+      console.log('Text:', result.text);
+      
+      setEnviando(false);
+      setEstado('ok');
+      form.current?.reset();
+      
+    } catch (error: any) {
+      console.error('❌ EmailJS ERROR COMPLETO:', error);
+      console.error('Error status:', error?.status);
+      console.error('Error text:', error?.text);
+      console.error('Error message:', error?.message);
+      console.error('Error response:', error?.response);
+      
+      setEnviando(false);
+      setEstado('error');
+    }
   };
 
   return (
@@ -170,6 +198,7 @@ export default function Contacto() {
                 <div className={styles.error}>
                   <h4>❌ Error al enviar</h4>
                   <p>Por favor, inténtalo de nuevo o contáctanos por WhatsApp.</p>
+                  <p><small>Revisa la consola del navegador (F12) para ver detalles del error.</small></p>
                 </div>
               )}
             </form>

@@ -34,9 +34,10 @@ export default function Header() {
     <li className={styles.navItem}><a href="#testimonios" className={styles.navLink}>Testimonios</a></li>
     <li className={styles.navItem}><a href="#contacto" className={styles.navLink}>Contacto</a></li>
     <li className={styles.navItem}>
-      <Link href="/blog" legacyBehavior>
-        <a className={styles.navLink}>Blog</a>
+      <Link href="/blog" className={styles.enlace}>
+       Blog
       </Link>
+
     </li>
   </ul>
   <a
