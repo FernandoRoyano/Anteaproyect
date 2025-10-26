@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-import styles from './CookiesBanner.module.css';
+import styles from '../components/CookieBanner.module.css'; // 🔧 CAMBIO AQUÍ
 
-export default function CookiesBanner() {
+export default function CookieBanner() {
   const [showBanner, setShowBanner] = useState(false);
   const [showDetails, setShowDetails] = useState(false);
 
