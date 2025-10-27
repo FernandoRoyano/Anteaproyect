@@ -25,11 +25,9 @@ export default function BlogPost({ post, relatedPosts }: BlogPostProps) {
       const docHeight = document.documentElement.scrollHeight - window.innerHeight;
       const progress = (scrollTop / docHeight) * 100;
       setScrollProgress(progress);
-      
-      // Detectar si está en la zona de lectura
+
       setIsReading(scrollTop > 200 && progress < 90);
     };
-
     window.addEventListener('scroll', updateScrollProgress);
     return () => window.removeEventListener('scroll', updateScrollProgress);
   }, []);
@@ -54,7 +52,7 @@ export default function BlogPost({ post, relatedPosts }: BlogPostProps) {
     return (
       <div className={styles.notFound}>
         <h1>Post no encontrado</h1>
-        <Link href="/blog">← Volver al blog</Link>
+        <Link href="/blog" className={styles.backToBlog}>← Volver al blog</Link>
       </div>
     );
   }
@@ -65,19 +63,16 @@ export default function BlogPost({ post, relatedPosts }: BlogPostProps) {
         <title>{post.title} | Blog ANTEA</title>
         <meta name="description" content={post.excerpt} />
         <meta name="keywords" content={`${post.category}, ejercicio mayores, salud, ANTEA`} />
-        
         {/* Open Graph */}
         <meta property="og:title" content={post.title} />
         <meta property="og:description" content={post.excerpt} />
         <meta property="og:image" content={post.image} />
         <meta property="og:type" content="article" />
-        
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={post.title} />
         <meta name="twitter:description" content={post.excerpt} />
         <meta name="twitter:image" content={post.image} />
-        
         <link rel="canonical" href={`https://anteasalud.com/blog/${post.slug}`} />
       </Head>
 
@@ -91,29 +86,41 @@ export default function BlogPost({ post, relatedPosts }: BlogPostProps) {
         />
       </div>
 
-      {/* Floating navigation */}
+      {/* Floating navigation (en lectura) */}
       {isReading && (
-        <div className={styles.floatingNav}>
+        <nav className={styles.floatingNav} aria-label="floating navigation">
           <Link href="/blog" className={styles.floatingBack}>
             ← Blog
           </Link>
           <div className={styles.floatingShare}>
-            <button onClick={shareOnTwitter} className={styles.shareBtn}>
+            <button 
+              onClick={shareOnTwitter} 
+              className={styles.shareBtn}
+              aria-label="Compartir en Twitter"
+            >
               🐦
             </button>
-            <button onClick={shareOnLinkedIn} className={styles.shareBtn}>
+            <button 
+              onClick={shareOnLinkedIn} 
+              className={styles.shareBtn}
+              aria-label="Compartir en LinkedIn"
+            >
               💼
             </button>
-            <button onClick={shareOnWhatsApp} className={styles.shareBtn}>
+            <button 
+              onClick={shareOnWhatsApp} 
+              className={styles.shareBtn}
+              aria-label="Compartir en WhatsApp"
+            >
               💬
             </button>
           </div>
-        </div>
+        </nav>
       )}
 
       <article className={styles.article}>
         {/* Breadcrumbs */}
-        <nav className={styles.breadcrumbs}>
+        <nav className={styles.breadcrumbs} aria-label="breadcrumbs">
           <Link href="/">Inicio</Link>
           <span>→</span>
           <Link href="/blog">Blog</Link>
@@ -130,9 +137,7 @@ export default function BlogPost({ post, relatedPosts }: BlogPostProps) {
               <span className={styles.readingTime}>⏱️ {post.readingTime} min de lectura</span>
             )}
           </div>
-          
           <h1 className={styles.title}>{post.title}</h1>
-          
           <div className={styles.author}>
             <div className={styles.authorInfo}>
               <div className={styles.authorAvatar}>
@@ -144,7 +149,6 @@ export default function BlogPost({ post, relatedPosts }: BlogPostProps) {
               </div>
             </div>
           </div>
-
           {/* Imagen destacada */}
           {post.image && (
             <div className={styles.featuredImage}>
@@ -168,17 +172,29 @@ export default function BlogPost({ post, relatedPosts }: BlogPostProps) {
           />
         </div>
 
-        {/* Social sharing */}
+        {/* Social sharing fijo en el artículo */}
         <div className={styles.shareSection}>
           <h3>Comparte este artículo</h3>
           <div className={styles.shareButtons}>
-            <button onClick={shareOnTwitter} className={styles.shareButton}>
+            <button 
+              onClick={shareOnTwitter} 
+              className={styles.shareButton}
+              aria-label="Compartir en Twitter"
+            >
               🐦 Twitter
             </button>
-            <button onClick={shareOnLinkedIn} className={styles.shareButton}>
+            <button 
+              onClick={shareOnLinkedIn} 
+              className={styles.shareButton}
+              aria-label="Compartir en LinkedIn"
+            >
               💼 LinkedIn
             </button>
-            <button onClick={shareOnWhatsApp} className={styles.shareButton}>
+            <button 
+              onClick={shareOnWhatsApp} 
+              className={styles.shareButton}
+              aria-label="Compartir en WhatsApp"
+            >
               💬 WhatsApp
             </button>
           </div>
@@ -244,13 +260,13 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const post = getPostBySlug(params!.slug as string);
   const allPosts = getAllPosts();
-  
-  // Posts relacionados (misma categoría o aleatorios)
+
+  // Buscar artículos relacionados
   const relatedPosts = allPosts
     .filter(p => p.slug !== post.slug && p.category === post.category)
     .slice(0, 3);
-  
-  // Si no hay suficientes de la misma categoría, llenar con otros
+
+  // Si faltan relacionados, completar con otros
   if (relatedPosts.length < 3) {
     const otherPosts = allPosts
       .filter(p => p.slug !== post.slug && !relatedPosts.some(rp => rp.slug === p.slug))

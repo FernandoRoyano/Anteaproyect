@@ -1,9 +1,9 @@
 ---
 title: "Nutrición práctica para personas mayores: Consejos sencillos para cuidadores y familias"
 date: "2024-07-18"
-excerpt: "Pequeños cambios y estrategias sencillas pueden marcar la diferencia en la salud y bienestar de tus mayores. Descubre cómo cuidar su alimentación con seguridad y cariño."
+excerpt: "Pequeños cambios y estrategias sencillas pueden marcar (...)" 
 image: /blog-images/nutricion-practica-para-personas-mayores.png
-slug: segundo-post
+slug: nutricion-practica-mayores
 ---
 
 ## Alimentar el bienestar: cómo ayudar a tus mayores a comer mejor cada día

@@ -1,8 +1,9 @@
 ---
-title: ¿Por qué es fundamental contar con profesionales para la actividad física de las personas mayores en casa?
+title: "¿Por qué es fundamental contar con profesionales para la actividad física de las personas mayores en casa?"
 date: "2024-07-18"
-excerpt: "Descubre por qué la supervisión profesional es clave para la seguridad y el bienestar de tus mayores. Evita lesiones y gana tranquilidad con el enfoque de ANTEA."
+excerpt: "Descubre por qué la supervisión profesional es clave (...)" 
 image: /blog-images/por-que-fundamental-profesionales-mayores.png
+slug: actividad-fisica-mayores-profesionales
 ---
 
 
