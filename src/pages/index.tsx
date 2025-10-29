@@ -8,7 +8,7 @@ import CTAFinal from '../components/CTAFinal';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import WhatsappButton from '@/components/WhatsappButton';
-import CookieBanner from '@/components/CookieBanner'; // <--- AÑADE ESTA LÍNEA
+import CookieBanner from '@/components/CookieBanner';
 
 export default function Home() {
   return (
@@ -17,18 +17,21 @@ export default function Home() {
         <title>Entrenador Personal Mayores Madrid | Ejercicio a Domicilio | ANTEA</title>
         <meta name="description" content="Recupera la movilidad y la vitalidad de tus padres o familiares senior. Entrenamiento funcional y acompañamiento emocional para adultos mayores, en casa o online. Solicita tu sesión gratuita y transforma su vida hoy." />
       </Head>
+      
+      <Header />
+      
       <main>
-        <Header />        
         <Hero />
         <Planes />
         <Testimonios />
         <Comparativa />
         <Contacto />
         <CTAFinal />
-        <WhatsappButton />
-        <Footer />
-        <CookieBanner /> {/* <--- AÑADE EL BANNER AQUÍ */}
       </main>
+      
+      <Footer />
+      <WhatsappButton />
+      <CookieBanner />
     </>
   );
 }

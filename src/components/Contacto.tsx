@@ -24,44 +24,26 @@ export default function Contacto() {
     setEnviando(true);
     setEstado('');
 
-    // 🔍 DEBUG: Log configuration
-    console.log('=== CONFIGURACIÓN EMAILJS ===');
-    console.log('Service ID:', 'service_antea_contacto');
-    console.log('Template ID:', 'Antea Salud');
-    console.log('Public Key:', 'GkuifuSj9iMoXN9fw');
-
-    // 🔍 DEBUG: Log form data
-    const formData = new FormData(form.current);
-    console.log('=== DATOS DEL FORMULARIO ===');
-    for (let [key, value] of formData.entries()) {
-      console.log(`${key}: "${value}"`);
-    }
-
     try {
       const result = await emailjs.sendForm(
-        'service_antea_contacto',    // ✅ Service ID correcto
-        'Antea Salud',               // ✅ Template ID correcto
-        form.current, 
-        'GkuifuSj9iMoXN9fw'         // ✅ Public Key correcta
+        'service_antea_contacto',
+        'Antea Salud',
+        form.current,
+        'GkuifuSj9iMoXN9fw'
       );
-      
-      console.log('✅ EmailJS SUCCESS:', result);
-      console.log('Status:', result.status);
-      console.log('Text:', result.text);
-      
+
+      console.log('✅ Correo enviado:', result);
       setEnviando(false);
       setEstado('ok');
       form.current?.reset();
-      
+
+      setTimeout(() => setEstado(''), 5000);
     } catch (error: any) {
-      console.error('❌ EmailJS ERROR COMPLETO:', error);
-      console.error('Error status:', error?.status);
-      console.error('Error text:', error?.text);
-      console.error('Error message:', error?.message);
-      console.error('Error response:', error?.response);
-      
+      console.error('❌ Error al enviar:', error);
       setEnviando(false);
       setEstado('error');
+
+      setTimeout(() => setEstado(''), 5000);
     }
   };
 
@@ -79,7 +61,7 @@ export default function Contacto() {
           {/* Contacto Directo */}
           <div className={styles.contactoDirecto}>
             <h3>📞 Contacto Inmediato</h3>
-            <a 
+            <a
               href="https://wa.me/34633261963?text=Hola,%20quiero%20información%20sobre%20ejercicio%20para%20personas%20mayores%20a%20domicilio"
               target="_blank"
               rel="noopener noreferrer"
@@ -87,24 +69,25 @@ export default function Contacto() {
             >
               📱 WhatsApp: 633 261 963
             </a>
-            <a 
-              href="tel:+34633261963"
-              className={styles.telefono}
-            >
+            <a href="tel:+34633261963" className={styles.telefono}>
               📞 Llamar ahora: 633 261 963
             </a>
 
             <div className={styles.info}>
               <div className={styles.infoItem}>
                 <h4>⏰ Horario</h4>
-                <p><strong>L-V:</strong> 9:00-13:00 | 16:00-19:00</p>
-                <p><strong>Sáb:</strong> 9:00-13:00</p>
+                <p>
+                  <strong>L-V:</strong> 9:00-13:00 | 16:00-19:00
+                </p>
+                <p>
+                  <strong>Sáb:</strong> 9:00-13:00
+                </p>
               </div>
-              
+
               <div className={styles.infoItem}>
                 <h4>📍 Zona Servicio</h4>
                 <p>Madrid Capital y alrededores</p>
-                <p><small>Pozuelo • Las Rozas • Majadahonda • Alcobendas</small></p>
+                <small>Pozuelo • Las Rozas • Majadahonda • Alcobendas</small>
               </div>
             </div>
           </div>
@@ -112,7 +95,7 @@ export default function Contacto() {
           {/* Formulario */}
           <div className={styles.formularioContainer}>
             <h3>✍️ O escríbenos aquí</h3>
-            
+
             <form ref={form} onSubmit={enviarCorreo} className={styles.formulario}>
               <input
                 type="text"
@@ -120,24 +103,32 @@ export default function Contacto() {
                 placeholder="Tu nombre completo"
                 required
                 className={styles.campo}
+                disabled={enviando}
               />
-              
+
               <input
                 type="email"
                 name="user_email"
                 placeholder="Tu email"
                 required
                 className={styles.campo}
+                disabled={enviando}
               />
-              
+
               <input
                 type="tel"
                 name="user_phone"
                 placeholder="Teléfono de contacto"
                 className={styles.campo}
+                disabled={enviando}
               />
-              
-              <select name="ubicacion" className={styles.campo} required>
+
+              <select
+                name="ubicacion"
+                className={styles.campo}
+                required
+                disabled={enviando}
+              >
                 <option value="">¿En qué zona necesitas el servicio?</option>
                 <option value="Madrid Centro">Madrid Centro</option>
                 <option value="Madrid Norte">Madrid Norte</option>
@@ -157,25 +148,50 @@ export default function Contacto() {
                 required
                 className={styles.campo}
                 rows={4}
+                disabled={enviando}
               />
 
               <div className={styles.opciones}>
                 <label className={styles.label}>¿Qué te interesa?</label>
                 <div className={styles.checkboxes}>
                   <label className={styles.checkbox}>
-                    <input type="checkbox" name="opciones" value="Evaluación gratuita" onChange={actualizarOpciones} />
+                    <input
+                      type="checkbox"
+                      name="opciones"
+                      value="Evaluación gratuita"
+                      onChange={actualizarOpciones}
+                      disabled={enviando}
+                    />
                     <span>🔍 Evaluación gratuita</span>
                   </label>
                   <label className={styles.checkbox}>
-                    <input type="checkbox" name="opciones" value="Programa básico" onChange={actualizarOpciones} />
+                    <input
+                      type="checkbox"
+                      name="opciones"
+                      value="Programa básico"
+                      onChange={actualizarOpciones}
+                      disabled={enviando}
+                    />
                     <span>💪 Programa básico (4 sesiones)</span>
                   </label>
                   <label className={styles.checkbox}>
-                    <input type="checkbox" name="opciones" value="Programa integral" onChange={actualizarOpciones} />
+                    <input
+                      type="checkbox"
+                      name="opciones"
+                      value="Programa integral"
+                      onChange={actualizarOpciones}
+                      disabled={enviando}
+                    />
                     <span>🎯 Programa integral (8 sesiones)</span>
                   </label>
                   <label className={styles.checkbox}>
-                    <input type="checkbox" name="opciones" value="Solo información" onChange={actualizarOpciones} />
+                    <input
+                      type="checkbox"
+                      name="opciones"
+                      value="Solo información"
+                      onChange={actualizarOpciones}
+                      disabled={enviando}
+                    />
                     <span>ℹ️ Solo información y precios</span>
                   </label>
                 </div>
@@ -184,7 +200,7 @@ export default function Contacto() {
               <input type="hidden" name="opciones_resumen" />
 
               <button type="submit" className={styles.boton} disabled={enviando}>
-                {enviando ? 'Enviando...' : '📧 Solicitar información'}
+                {enviando ? '⏳ Enviando...' : '📧 Solicitar información'}
               </button>
 
               {estado === 'ok' && (
@@ -193,12 +209,12 @@ export default function Contacto() {
                   <p>Te contactaremos en menos de 24h para programar tu evaluación gratuita.</p>
                 </div>
               )}
-              
+
               {estado === 'error' && (
                 <div className={styles.error}>
                   <h4>❌ Error al enviar</h4>
                   <p>Por favor, inténtalo de nuevo o contáctanos por WhatsApp.</p>
-                  <p><small>Revisa la consola del navegador (F12) para ver detalles del error.</small></p>
+                  <small>Revisa la consola del navegador (F12) para ver detalles del error.</small>
                 </div>
               )}
             </form>

@@ -1,65 +1,345 @@
-.section {
-  padding: 2.5rem 1rem;
+.contacto {
+  padding: 3rem 1rem;
+  background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
   text-align: center;
 }
 
-.form {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  max-width: 350px;
-  margin: 0 auto;
-  background: #f4f6fa;
-  padding: 18px 20px;
-  border-radius: 12px;
+.titulo {
+  font-size: 1.8rem;
+  color: #174B8C;
+  margin-bottom: 0.5rem;
+  font-weight: 800;
 }
 
-.form input,
-.form textarea {
-  padding: 0.7rem 0.9rem;
-  border-radius: 6px;
-  border: 1px solid #eaeaea;
+.subtitulo {
+  font-size: 1.1rem;
+  color: #64748b;
+  margin-bottom: 2rem;
+}
+
+/* Grid contacto */
+.contactoGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* Contacto Directo */
+.contactoDirecto {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(23,75,140,0.08);
+  text-align: left;
+  border-left: 5px solid #FFC107;
+}
+
+.contactoDirecto h3 {
+  color: #174B8C;
+  margin-bottom: 1.5rem;
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.whatsapp,
+.telefono {
+  display: block;
+  background: #174B8C;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  transition: all 0.2s;
+  text-align: center;
+}
+
+.whatsapp:hover,
+.telefono:hover {
+  background: #FFC107;
+  color: #174B8C;
+  transform: translateY(-2px);
+}
+
+.info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.infoItem {
+  background: #f8fafc;
+  padding: 1rem;
+  border-radius: 8px;
+  border-top: 3px solid #174B8C;
+  text-align: left;
+}
+
+.infoItem h4 {
+  color: #174B8C;
+  margin-bottom: 0.5rem;
   font-size: 1rem;
+}
+
+.infoItem p {
+  font-size: 0.9rem;
+  color: #334155;
+  margin-bottom: 0.3rem;
+}
+
+.infoItem small {
+  display: block;
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+/* Formulario Container */
+.formularioContainer {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(23,75,140,0.08);
+}
+
+.formularioContainer h3 {
+  color: #174B8C;
+  margin-bottom: 1.5rem;
+  font-size: 1.3rem;
+}
+
+/* Formulario */
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 100%;
+}
+
+.campo {
+  padding: 12px;
+  border: 1px solid #eaeaea;
+  border-radius: 6px;
+  font-size: 1rem;
+  background: #f8fafc;
+  font-family: inherit;
+  transition: border-color 0.2s;
+}
+
+.campo:focus {
+  outline: none;
+  border-color: #174B8C;
   background: #fff;
 }
 
-.form textarea {
-  min-height: 100px;
+textarea.campo {
   resize: vertical;
+  min-height: 100px;
 }
 
-.form button {
+/* Opciones */
+.opciones {
+  text-align: left;
+}
+
+.label {
+  display: block;
+  font-weight: 600;
+  color: #174B8C;
+  margin-bottom: 0.8rem;
+  font-size: 0.95rem;
+}
+
+.checkboxes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  font-size: 0.95rem;
+  color: #334155;
+}
+
+.checkbox input {
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+  accent-color: #174B8C;
+}
+
+.checkbox span {
+  user-select: none;
+}
+
+/* Botón */
+.boton {
   background: #174B8C;
   color: #fff;
   border: none;
   border-radius: 8px;
+  padding: 14px;
   font-weight: 700;
-  font-size: 1rem;
-  padding: 13px 0;
+  font-size: 1.05rem;
   cursor: pointer;
-  margin-top: 8px;
-  transition: background 0.2s;
+  transition: all 0.2s;
+  margin-top: 1rem;
 }
 
-.form button:hover {
+.boton:hover:not(:disabled) {
   background: #FFC107;
   color: #174B8C;
+  transform: translateY(-2px);
 }
 
-.info {
-  margin-top: 23px;
-  font-size: 1.05rem;
-  color: #64748b;
+.boton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
 
-.enviado {
-  font-size: 1.2rem;
-  color: #179c36;
-  font-weight: 600;
+/* Estados */
+.exito {
   background: #e6ffed;
+  color: #179c36;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+  border-left: 4px solid #179c36;
+}
+
+.exito h4 {
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.exito p {
+  font-size: 0.95rem;
+}
+
+.error {
+  background: #ffe6e6;
+  color: #dc2626;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+  border-left: 4px solid #dc2626;
+}
+
+.error h4 {
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.error p {
+  font-size: 0.95rem;
+}
+
+.error small {
+  display: block;
+  opacity: 0.8;
+  margin-top: 0.5rem;
+}
+
+/* Garantías */
+.garantias {
+  background: linear-gradient(135deg, #174B8C 0%, #0c326d 100%);
+  color: #fff;
+  padding: 2.5rem;
+  border-radius: 12px;
+  margin-top: 2rem;
+}
+
+.garantias h3 {
+  font-size: 1.4rem;
+  margin-bottom: 1.5rem;
+}
+
+.garantiasGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.garantia {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1.5rem;
   border-radius: 10px;
-  padding: 24px 10px;
-  margin: 0 auto 20px;
-  max-width: 400px;
-  box-shadow: 0 2px 8px rgba(23,75,140,0.06);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.2s;
+}
+
+.garantia:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-3px);
+}
+
+.garantiaIcon {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.garantia h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.garantia p {
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .contactoGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .checkboxes {
+    grid-template-columns: 1fr;
+  }
+
+  .info {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .contacto {
+    padding: 1.5rem;
+  }
+
+  .titulo {
+    font-size: 1.5rem;
+  }
+
+  .subtitulo {
+    font-size: 1rem;
+  }
+
+  .contactoDirecto,
+  .formularioContainer {
+    padding: 1rem;
+  }
+
+  .whatsapp,
+  .telefono {
+    font-size: 0.95rem;
+  }
+
+  .garantiasGrid {
+    grid-template-columns: 1fr;
+  }
 }

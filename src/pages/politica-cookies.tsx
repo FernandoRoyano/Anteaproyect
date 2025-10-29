@@ -2,7 +2,7 @@
 import Head from 'next/head';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import styles from '@/styles/PoliticaCookies.module.css';
+import styles from '@/styles/PoliticaCookies.module.css';  // ✅ Correcto
 
 export default function PoliticaCookies() {
   return (

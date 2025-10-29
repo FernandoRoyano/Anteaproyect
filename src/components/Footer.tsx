@@ -61,14 +61,13 @@ export default function Footer() {
               <p><strong>L-V:</strong> 9:00-13:00 | 16:00-19:00</p>
               <p><strong>Sáb:</strong> 9:00-13:00</p>
               <p><strong>Dom:</strong> Solo emergencias</p>
-            </div>
-            
-            <div className={styles.col}>
-              <h4>Legal</h4>
-              <Link href="/privacidad/">Política de Privacidad</Link>
-              <Link href="/aviso-legal/">Aviso Legal</Link>
-              <Link href="/cookies/">Política de Cookies</Link>
-            </div>
+            </div>  
+              <div className={styles.col}>
+                <h4>Legal</h4>
+                <Link href="/privacidad">Política de Privacidad</Link>
+                <Link href="/aviso-legal">Aviso Legal</Link>
+                <Link href="/politica-cookies">Política de Cookies</Link>
+              </div>
           </div>
         </div>
 
