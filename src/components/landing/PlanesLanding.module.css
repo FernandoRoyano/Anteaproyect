@@ -1,0 +1,28 @@
+.section {
+  padding: 2.5rem 1rem;
+  text-align: center;
+}
+
+.planes {
+  display: flex;
+  gap: 1.6rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 24px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(23,75,140,0.08);
+  padding: 28px 32px;
+  max-width: 250px;
+  min-width: 180px;
+  margin: 10px 0;
+}
+
+.card h3 {
+  font-size: 1.2rem;
+  color: #174B8C;
+  margin-bottom: 10px;
+}

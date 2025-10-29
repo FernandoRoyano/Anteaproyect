@@ -1,6 +1,7 @@
 ---
 title: "Nutrición práctica para personas mayores: Consejos sencillos para cuidadores y familias"
 date: "2024-07-18"
+category: Nutricion
 excerpt: "Pequeños cambios y estrategias sencillas pueden marcar (...)" 
 image: /blog-images/nutricion-practica-para-personas-mayores.png
 slug: nutricion-practica-mayores

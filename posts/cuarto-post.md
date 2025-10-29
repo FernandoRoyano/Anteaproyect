@@ -1,6 +1,7 @@
 ---
 title: "Envejecimiento saludable: guía práctica para familias y personas mayores"
 date: "2025-10-27"
+category: Salud
 excerpt: "Descubre las claves científicas para envejecer con salud, autonomía y calidad de vida. Consejos prácticos respaldados por la investigación más actual."
 image: /blog-images/envejecimiento-saludable-guia.png
 slug: envejecimiento-saludable-guia-practica

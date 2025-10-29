@@ -1,0 +1,27 @@
+.cta {
+  text-align: center;
+  padding: 2.5rem 1rem;
+  background: #174B8C;
+  color: #fff;
+  border-radius: 12px;
+  margin: 2rem 0;
+}
+
+.boton {
+  background: #FFC107;
+  color: #174B8C;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  padding: 18px 38px;
+  margin-top: 1.2rem;
+  font-size: 1.13rem;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: background 0.17s;
+}
+
+.boton:hover {
+  background: #FFD54F;
+}

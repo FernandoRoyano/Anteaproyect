@@ -14,7 +14,7 @@ const categories = [
   'Todos',
   'Ejercicios',
   'Salud', 
-  'Testimonios',
+  'Nutricion',
   'Consejos',
   'Rehabilitación'
 ];
